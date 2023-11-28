@@ -24,3 +24,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+.spinner {
+  animation: rotate 0.5s infinite linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
