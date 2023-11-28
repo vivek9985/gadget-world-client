@@ -161,7 +161,7 @@ const DashboardLayout = () => {
       </div>
 
       <div className="w-[80%] bg-[#71bae170] pt-8 pb-20 px-10">
-        <h2 className="text-4xl font-bold text-blue-500">Dashboard</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-blue-500">Dashboard</h2>
         <Outlet></Outlet>
       </div>
     </div>

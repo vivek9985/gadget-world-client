@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/Ai";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import GoogleLogin from "../../Components/GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -99,6 +100,7 @@ const Login = () => {
               >
                 Login
               </button>
+              <GoogleLogin></GoogleLogin>
               <p className="text-sm text-gray-500 ">
                 Don't have an account?{" "}
                 <Link

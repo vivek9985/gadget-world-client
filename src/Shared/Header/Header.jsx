@@ -45,6 +45,20 @@ const Header = () => {
         </NavLink>
       </li>
       <li>
+        {user ? (
+          <div></div>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive ? "text-blue-600" : "text-gray-800 hover:text-blue-600"
+            }
+          >
+            Login
+          </NavLink>
+        )}
+      </li>
+      <li>
         <div className="text-sm overflow-hidden rounded-full">
           <div
             onClick={() => {
@@ -63,19 +77,18 @@ const Header = () => {
             )}
           </div>
           <div className="w-9 h-9 rounded-full bg-gray-100">
-            <div 
-              className={`absolute mt-14 lg:mt-14 lg:right-20 ${
+            <div
+              className={`absolute z-50 mt-14 lg:mt-14 lg:right-20 transition-all duration-500 ${
                 profile ? "opacity-100" : "opacity-0"
               }`}
             >
               <div className="bg-gray-300 rounded-lg p-4">
                 {user ? (
-                  <h1 className="capitalize">{user?.displayName}</h1>
+                  <h1 className="capitalize pb-2">{user?.displayName}</h1>
                 ) : (
-                  <h2>User Name</h2>
+                  <h2 className="text-blue-500">User Name</h2>
                 )}
-                <br />
-
+                {/* <br /> */}
                 {user ? (
                   <button
                     onClick={logoutHandler}
@@ -84,9 +97,7 @@ const Header = () => {
                     Loguot
                   </button>
                 ) : (
-                  <button  className="bg-red-200 px-4 pb-2 pt-1.5 rounded-xl">
-                    <Link to="/login">Login</Link>
-                  </button>
+                  <span></span>
                 )}
                 <br />
 
