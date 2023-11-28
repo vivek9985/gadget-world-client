@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: .9rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(186, 179, 179);
+  border-radius: 2rem;
+  border-right: .3rem;
+  border-style: solid;
+  border-color: transparent;
+  background-clip: content-box;
+}
+
+
+.lap {
+  background-image: url(../assets/laptop.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
