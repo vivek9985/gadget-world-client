@@ -1,11 +1,11 @@
 import { FaDribbble, FaFacebook, FaInstagram } from "react-icons/fa6";
 const OurTeam = () => {
   return (
-    <section className="w-10/12 mx-auto mb-32">
+    <section className="w-9/12 mx-auto mb-32">
       <h2 className="text-center text-xl sm:text-3xl mt-20">OUR TEAM</h2>
       <div className="h-0.5 w-[10%] bg-gray-300 mx-auto rounded-full mt-2"></div>
       <div className="h-0.5 w-[13%] bg-gray-300 mx-auto rounded-full mt-1 mb-20"></div>
-      <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3">
         <div className="text-center text-gray-500">
           <img
             className="mx-auto mb-4 w-36 h-36 rounded-full bg-purple-500"

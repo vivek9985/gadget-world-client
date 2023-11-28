@@ -15,12 +15,13 @@ import ManageUsers from "./../Pages/Dashboard/ManageUsers/ManageUsers";
 import Details from "../Pages/ProductDetails/Details";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
 import Statistics from "../Pages/Dashboard/Statistics/Statistics";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    errorElement: <h3>404 not found!</h3>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
