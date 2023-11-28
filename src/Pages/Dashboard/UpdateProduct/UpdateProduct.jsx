@@ -19,7 +19,6 @@ const UpdateProduct = () => {
       image,
       externalLink,
     };
-    // console.log(updateItem);
     axiosSecure.put(`/updateProduct/${product._id}`, updateItem).then((res) => {
       if (res?.data?.modifiedCount > 0);
       toast.success("Updated product!");
@@ -27,7 +26,7 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div>
+    <section>
       <h2 className="text-3xl font-semibold text-black text-center my-14">
         Update Product
       </h2>
@@ -109,7 +108,7 @@ const UpdateProduct = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
