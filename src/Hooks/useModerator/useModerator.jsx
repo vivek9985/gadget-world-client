@@ -3,17 +3,17 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../useAxiosSecure";
 
-const useAdmin = () => {
+const useModerator= () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
-  const { data: isAdimn } = useQuery({
-    queryKey: [user?.email, "isAdmin"],
+  const { data: isModerator } = useQuery({
+    queryKey: [user?.email, "isModerator"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/user/admin/${user?.email}`);
-      return res.data?.admin;
+      const res = await axiosSecure.get(`/user/moderator/${user?.email}`);
+      return res.data?.moderator;
     },
   });
-  return [isAdimn];
+  return [isModerator];
 };
 
-export default useAdmin;
+export default useModerator;

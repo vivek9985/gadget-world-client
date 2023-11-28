@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useAdmin from "../../../Hooks/useAdmin/useAdmin";
+import useModerator from "../../../Hooks/useModerator/useModerator";
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin();
-
-  const moderator = false;
+  const [isModerator] = useModerator();
 
   return (
     <div className="flex overflow-hidden">
@@ -81,7 +81,7 @@ const DashboardLayout = () => {
                   </li>
                 </>
               );
-            } else if (moderator) {
+            } else if (isModerator) {
               return (
                 <>
                   <li className="h-0.5 w-10/12 mx-auto bg-gray-500 rounded-full"></li>
