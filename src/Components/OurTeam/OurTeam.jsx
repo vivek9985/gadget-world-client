@@ -13,9 +13,7 @@ const OurTeam = () => {
       return res.data;
     },
   });
-  console.log(users);
   const team = users.filter((item) => item.role === "moderator");
-  console.log(team);
 
   return (
     <section className="w-10/12 mx-auto mb-32">
