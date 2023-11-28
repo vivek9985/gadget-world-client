@@ -14,11 +14,6 @@ const MyProducts = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosSecure.get("/products");
-      // , {
-      //   headers: {
-      //     authorization: `Bearer ${localStorage.getItem("token")}`,
-      //   },
-      // }
       return res.data;
     },
   });
@@ -31,7 +26,6 @@ const MyProducts = () => {
       }
       refetch();
     });
-    console.log(id);
   };
 
   return (
