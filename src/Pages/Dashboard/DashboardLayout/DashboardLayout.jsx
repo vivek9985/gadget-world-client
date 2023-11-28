@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
@@ -7,21 +7,15 @@ import { useQuery } from "@tanstack/react-query";
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
-
   const { data: users = [] } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users", {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axiosSecure.get("/users");
       return res.data;
     },
   });
 
-  // console.log(users);
-  const admin = true;
+  const admin = false;
   const moderator = false;
 
   return (

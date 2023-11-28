@@ -33,7 +33,7 @@ const Addproduct = () => {
       allTags: allTags,
       status,
     };
-    form.reset();
+    // form.reset();
 
     axiosSecure
       .post("/products", product, {
@@ -47,7 +47,6 @@ const Addproduct = () => {
         }
       });
 
-    // console.log(product);
   };
   const tagHandler = (e) => {
     // if (e.key !== "Enter") return;

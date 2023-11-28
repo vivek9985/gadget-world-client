@@ -9,26 +9,19 @@ const ManageUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users", {
-        headers : {
-          authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      });
+      const res = await axiosSecure.get("/users");
       return res.data;
     },
   });
 
   const makeAdminHandler = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
-      console.log(res.data);
       refetch();
       toast.success(`${user.userName} is admin now !`);
     });
   };
   const makeModeratotHandler = (user) => {
-    console.log(user);
     axiosSecure.patch(`/users/${user._id}`).then((res) => {
-      console.log(res.data);
       refetch();
       toast.success(`${user.userName} is moderator now !`);
     });
@@ -40,26 +33,24 @@ const ManageUsers = () => {
         All Users ({users.length})
       </h2>
       <div className="w-full">
-        <table className="bg-white rounded-sm w-full overflow-hidden">
-          {/* head */}
+        <table className="bg-white rounded-sm w-full overflow-y-scroll">
           <thead className="text-center">
             <tr className="bg-red-300">
-              <th>#</th>
-              <th>User Name</th>
-              <th>User Email</th>
-              <th>Make Moderator</th>
-              <th>Make Admin</th>
+              <th className="p-3">#</th>
+              <th className="p-3">User Name</th>
+              <th className="p-3">User Email</th>
+              <th className="p-3">Make Moderator</th>
+              <th className="p-3">Make Admin</th>
             </tr>
           </thead>
           <tbody className="text-center">
-            {/* row 1 */}
             {users.map((user, index) => (
               <tr key={user._id} className="text-center">
                 <th>{index + 1}</th>
                 <td>{user?.userName}</td>
                 <td className="break-all">{user?.email}</td>
                 <td>
-                  <div className="flex justify-center mt-2">
+                  <div className="flex justify-center mt-2 text-lg">
                     {user?.role == "moderator" ? (
                       "moderator"
                     ) : (
@@ -70,7 +61,7 @@ const ManageUsers = () => {
                   </div>
                 </td>
                 <td>
-                  <div className="flex justify-center mt-2">
+                  <div className="flex justify-center mt-2 mb-3 text-lg">
                     {user?.role == "admin" ? (
                       "Admin"
                     ) : (
