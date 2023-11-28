@@ -10,11 +10,6 @@ const ReportedContents = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosSecure.get("/products");
-      // , {
-      //   headers: {
-      //     authorization: `Bearer ${localStorage.getItem("token")}`,
-      //   },
-      // }
       return res.data;
     },
   });
@@ -30,8 +25,6 @@ const ReportedContents = () => {
   const reportedContents = products.filter(
     (item) => item.report === "true"
   );
-  console.log(reportedContents)
-
 
   return (
     <div>
