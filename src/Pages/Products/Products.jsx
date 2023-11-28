@@ -41,21 +41,16 @@ function ThumbnailPlugin(mainRef) {
 const Products = () => {
   const axiosSecure = useAxiosSecure();
 
-  const { data: products = [], refetch } = useQuery({
+  const { data: products = [] } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosSecure.get("/products");
-      // , {
-      //     headers: {
-      //       authorization: `Bearer ${localStorage.getItem("token")}`,
-      //     },
-      //   }
       return res.data;
     },
   });
-  const firstPage = products.slice(0, 20);
-  const secondPage = products.slice(20, 40);
-  const thirdPage = products.slice(41, 60);
+  const firstPage = products.slice(0, 21);
+  const secondPage = products.slice(20, 41);
+  const thirdPage = products.slice(40, 61);
 
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
@@ -268,12 +263,11 @@ const Products = () => {
           ref={thumbnailRef}
           className="keen-slider thumbnail text-center mb-32 flex items-center justify-center"
         >
-          <div className="keen-slider__slide number-slide1">1</div>
-          <div className="keen-slider__slide number-slide2">2</div>
-          <div className="keen-slider__slide number-slide3">3</div>
+          <div className="keen-slider__slide number-slide1 bg-blue-100 rounded-lg border pt-0.5">1</div>
+          <div className="keen-slider__slide number-slide2 bg-blue-100 rounded-lg border pt-0.5">2</div>
+          <div className="keen-slider__slide number-slide3 bg-blue-100 rounded-lg border pt-0.5">3</div>
         </div>
       </div>
-      {/* <Slider></Slider> */}
     </>
   );
 };
