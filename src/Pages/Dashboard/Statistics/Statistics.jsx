@@ -8,11 +8,6 @@ const Statistics = () => {
     queryKey: ["reviews"],
     queryFn: async () => {
       const res = await axiosSecure.get("/reviews");
-      //   , {
-      //     headers: {
-      //       authorization: `Bearer ${localStorage.getItem("token")}`,
-      //     },
-      //   }
       return res.data;
     },
   });
@@ -20,11 +15,6 @@ const Statistics = () => {
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axiosSecure.get("/users");
-      //   , {
-      //     headers: {
-      //       authorization: `Bearer ${localStorage.getItem("token")}`,
-      //     },
-      //   }
       return res.data;
     },
   });
@@ -32,11 +22,6 @@ const Statistics = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosSecure.get("/products");
-      //   , {
-      //     headers: {
-      //       authorization: `Bearer ${localStorage.getItem("token")}`,
-      //     },
-      //   }
       return res.data;
     },
   });
