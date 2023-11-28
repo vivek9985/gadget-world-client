@@ -85,14 +85,6 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "updateProduct",
-      //   element: (
-      //     <PrivateRoute>
-      //       <UpdateProduct></UpdateProduct>
-      //     </PrivateRoute>
-      //   ),
-      // },
       {
         path: "updateProduct/:id",
         element: (

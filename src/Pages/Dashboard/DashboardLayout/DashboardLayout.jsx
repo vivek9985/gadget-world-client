@@ -1,22 +1,13 @@
 import { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
+import useAdmin from "../../../Hooks/useAdmin/useAdmin";
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
-  const axiosSecure = useAxiosSecure();
-  const { data: users = [] } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/users");
-      return res.data;
-    },
-  });
+  const [isAdmin] = useAdmin();
 
-  const admin = false;
-  const moderator = true;
+  const moderator = false;
 
   return (
     <div className="flex overflow-hidden">
@@ -48,7 +39,7 @@ const DashboardLayout = () => {
           </li>
 
           {(() => {
-            if (admin) {
+            if (isAdmin) {
               return (
                 <>
                   <li className="h-0.5 w-10/12 mx-auto bg-gray-500 rounded-full"></li>

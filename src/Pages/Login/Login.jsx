@@ -18,11 +18,11 @@ const Login = () => {
     const password = form.password.value;
     login(email, password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error);
         toast.error(error.message);
       });
   };
