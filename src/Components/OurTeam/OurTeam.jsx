@@ -21,13 +21,13 @@ const OurTeam = () => {
     <section className="w-10/12 mx-auto mb-32">
       <h2 className="text-center text-xl sm:text-3xl mt-20">OUR TEAM</h2>
       <div className="h-0.5 w-[10%] bg-gray-300 mx-auto rounded-full mt-2"></div>
-      <div className="h-0.5 w-[13%] bg-gray-300 mx-auto rounded-full mt-1 mb-2"></div>
+      <div className="h-0.5 w-[13%] bg-gray-300 mx-auto rounded-full mt-1 mb-20"></div>
 
       <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {team.map((item) => (
           <div
             key={item?._id}
-            className="text-center text-gray-500 dark:text-gray-400"
+            className="text-center text-gray-500"
           >
             {item?.photo ? (
               <img
@@ -42,7 +42,7 @@ const OurTeam = () => {
                 alt="Bonnie Avatar"
               />
             )}
-            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900">
               {item?.userName}
             </h3>
             <p className="capitalize">Role : {item?.role}</p>

@@ -15,8 +15,8 @@ const DashboardLayout = () => {
     },
   });
 
-  const admin = true;
-  const moderator = false;
+  const admin = false;
+  const moderator = true;
 
   return (
     <div className="flex overflow-hidden">
