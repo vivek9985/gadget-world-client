@@ -27,6 +27,7 @@ const Register = () => {
         const userInfo = {
           userName: name,
           email: email,
+          photo: photo,
         };
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log(res.data);
@@ -54,6 +55,7 @@ const Register = () => {
         const userInfo = {
           userName: res.user?.displayName,
           email: res.user?.email,
+          photo: res.user?.photoURL,
         };
         axiosPublic.post("/users", userInfo).then((res) => {
           navigate(location?.state ? location.state : "/");

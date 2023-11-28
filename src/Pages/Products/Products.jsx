@@ -2,15 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { TiArrowDownThick } from "react-icons/ti";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
-import spinner from "../../assets/spinner.png";
-
 
 const Products = () => {
-  const { loading } = useContext(AuthContext);
-
-  console.log(loading);
   const axiosSecure = useAxiosSecure();
 
   const { data: products = [], refetch } = useQuery({

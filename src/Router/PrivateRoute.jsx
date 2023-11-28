@@ -8,12 +8,12 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    <div className="h-screen w-full flex items-center justify-center bg-red-400">
+    <div className="h-[80vh] w-full flex items-center justify-center">
       <div className="w-[100px] h-[90px] mx-auto">
         <img src={spinner} alt="image" className="w-full h-full spinner" />
       </div>
-    </div>;
-  }
+    </div>
+  } 
 
   if (user) {
     return children;
