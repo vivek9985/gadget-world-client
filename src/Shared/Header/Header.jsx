@@ -127,7 +127,7 @@ const Header = () => {
               onClick={() => {
                 setOpen(!open);
               }}
-              className="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center z-50 cursor-pointer"
+              className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center z-50 cursor-pointer"
             >
               {open ? (
                 <CgClose className="font-bold text-xl text-white"></CgClose>
@@ -136,8 +136,8 @@ const Header = () => {
               )}
             </div>
             <div
-              className={`absolute bg-[#00000000] h-screen overflow-hidden top-0 left-0 transition-all duration-1000 ${
-                open ? "opacity-100 z-40 w-7/12" : "opacity-75 w-0 -z-10"
+              className={`absolute bg-[#00000000] h-screen overflow-hidden top-0 left-0 transition-all duration-700 ${
+                open ? "opacity-100 z-40 w-7/12" : "opacity-100 w-0 -z-10"
               }`}
             >
               <div className="h-full bg-[#dddddd]">

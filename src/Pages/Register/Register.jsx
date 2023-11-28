@@ -33,13 +33,11 @@ const Register = () => {
           console.log(res.data);
           navigate(location?.state ? location.state : "/");
         });
-
         toast.success("Registered!");
         updateProfile(res.user, {
           displayName: name,
           photoURL: photo,
         });
-
         form.reset();
       })
       .catch((error) => {
