@@ -10,11 +10,6 @@ const ReviewProducts = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosSecure.get("/products");
-      // , {
-      //   headers: {
-      //     authorization: `Bearer ${localStorage.getItem("token")}`,
-      //   },
-      // }
       return res.data;
     },
   });
