@@ -14,6 +14,7 @@ import ReportedContents from "./../Pages/Dashboard/ReportedContents/ReportedCont
 import ManageUsers from "./../Pages/Dashboard/ManageUsers/ManageUsers";
 import Details from "../Pages/ProductDetails/Details";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
+import Statistics from "../Pages/Dashboard/Statistics/Statistics";
 
 const router = createBrowserRouter([
   {
@@ -129,7 +130,7 @@ const router = createBrowserRouter([
         path: "statistics",
         element: (
           <PrivateRoute>
-            <h2>Statistics</h2>
+            <Statistics></Statistics>
           </PrivateRoute>
         ),
       },

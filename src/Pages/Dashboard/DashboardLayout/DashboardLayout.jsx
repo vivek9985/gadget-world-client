@@ -21,7 +21,7 @@ const DashboardLayout = () => {
   });
 
   // console.log(users);
-  const admin = false;
+  const admin = true;
   const moderator = false;
 
   return (
