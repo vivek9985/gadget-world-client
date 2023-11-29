@@ -8,7 +8,7 @@ const Banner = () => {
           Latest Tech Products
         </h2>
         <p className="mt-6 font-medium text-lg">
-          Get your desired product from{" "}
+          Showcase your product in{" "}
           <span className="text-green-500 font-medium">Gadget World</span>.
         </p>
         <div className="">

@@ -15,7 +15,7 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
 
-const AuthProvider = ({ children }) => {  
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
@@ -41,19 +41,19 @@ const AuthProvider = ({ children }) => {
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)  
+      setUser(currentUser);
       if (currentUser) {
         const userInf = { email: currentUser.email };
-        axiosPublic.post("/jwt", userInf)
-        .then((res) => {
+        axiosPublic.post("/jwt", userInf).then((res) => {
           if (res.data.token) {
             localStorage.setItem("token", res.data.token);
+            setLoading(false);
           }
         });
       } else {
         localStorage.removeItem("token");
+        setLoading(false);
       }
-      setLoading(false);
     });
     return () => {
       unSubscribe();

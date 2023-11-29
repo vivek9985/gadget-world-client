@@ -47,26 +47,8 @@ const Register = () => {
       });
   };
 
-  // const loginWithGoogle = () => {
-  //   loginwithGoogle()
-  //     .then((res) => {
-  //       console.log(res);
-  //       const userInfo = {
-  //         userName: res.user?.displayName,
-  //         email: res.user?.email,
-  //         photo: res.user?.photoURL,
-  //       };
-  //       axiosPublic.post("/users", userInfo).then((res) => {
-  //         navigate(location?.state ? location.state : "/");
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
-
   return (
-    <section className="w-full px-2 md:px-0 lg:w-11/12 xl:w-10/12 h-auto mx-auto md:mt-20 lg:mt-36 rounded-xl pb-32">
+    <section className="w-full px-2 md:px-0 lg:w-11/12 xl:w-10/12 h-auto mx-auto mt-14 md:mt-20 lg:mt-36 rounded-xl pb-32">
       <div className="w-full mx-auto">
         <div className="w-full mx-auto shadow md:mt-0 sm:max-w-md xl:p-0 bg-red-100 overflow-hidden rounded-2xl">
           <div className="w-full bg-transparent p-5 space-y-4 md:space-y-6 sm:p-8">
@@ -164,12 +146,6 @@ const Register = () => {
                 Register
               </button>
             </form>
-            {/* <button
-              onClick={loginWithGoogle}
-              className="w-full text-white bg-orange-500 hover:bg-gray-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
-            >
-              Login with Google
-            </button> */}
             <GoogleLogin></GoogleLogin>
             <p className="text-sm text-gray-500 ">
               Already have an account?{" "}

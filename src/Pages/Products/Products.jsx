@@ -48,9 +48,12 @@ const Products = () => {
       return res.data;
     },
   });
-  const firstPage = products.slice(0, 21);
-  const secondPage = products.slice(20, 41);
-  const thirdPage = products.slice(40, 61);
+  const acceptedProducts = products.filter(
+    (item) => item.status === "accepted"
+  );
+  const firstPage = acceptedProducts.slice(0, 20);
+  const secondPage = acceptedProducts.slice(20, 41);
+  const thirdPage = acceptedProducts.slice(40, 61);
 
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
@@ -263,9 +266,15 @@ const Products = () => {
           ref={thumbnailRef}
           className="keen-slider thumbnail text-center mb-32 flex items-center justify-center"
         >
-          <div className="keen-slider__slide number-slide1 bg-blue-100 rounded-lg border pt-0.5">1</div>
-          <div className="keen-slider__slide number-slide2 bg-blue-100 rounded-lg border pt-0.5">2</div>
-          <div className="keen-slider__slide number-slide3 bg-blue-100 rounded-lg border pt-0.5">3</div>
+          <div className="keen-slider__slide number-slide1 bg-blue-100 rounded-lg border pt-0.5">
+            1
+          </div>
+          <div className="keen-slider__slide number-slide2 bg-blue-100 rounded-lg border pt-0.5">
+            2
+          </div>
+          <div className="keen-slider__slide number-slide3 bg-blue-100 rounded-lg border pt-0.5">
+            3
+          </div>
         </div>
       </div>
     </>

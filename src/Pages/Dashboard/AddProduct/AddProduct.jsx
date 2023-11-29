@@ -14,6 +14,8 @@ const Addproduct = () => {
   const axiosSecure = useAxiosSecure();
 
   const allTags = tags.slice(0, 4);
+  const timeStamp = Date.now();
+
   const addProductHandler = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +34,7 @@ const Addproduct = () => {
       ownerEmail: user?.email,
       allTags: allTags,
       status,
+      timeStamp,
     };
     form.reset();
 
@@ -46,6 +49,7 @@ const Addproduct = () => {
           toast.success("Added a product!");
         }
       });
+    setTags([]);
   };
   const tagHandler = (e) => {
     // if (e.key !== "Enter") return;

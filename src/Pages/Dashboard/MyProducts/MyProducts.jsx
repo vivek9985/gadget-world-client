@@ -50,7 +50,7 @@ const MyProducts = () => {
                 <tr key={item?._id}>
                   <th>{index + 1}</th>
                   <td>{item?.productName}</td>
-                  <td>Votes</td>
+                  <td>0</td>
                   <td className="capitalize">{item.status}</td>
                   <td className="flex flex-col items-center">
                     <button className="px-2 py-1 bg-fuchsia-600 mt-3 text-white rounded-lg">

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const TendingProducts = () => {
   const axiosPublic = useAxiosPublic();
-
   const { data: products = [], refetch } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
@@ -13,7 +12,6 @@ const TendingProducts = () => {
       return res.data;
     },
   });
-
   const trendingProducts = products.slice(0, 6);
 
   return (

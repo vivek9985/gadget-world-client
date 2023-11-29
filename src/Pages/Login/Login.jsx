@@ -28,7 +28,7 @@ const Login = () => {
       });
   };
   return (
-    <section className="w-full px-2 md:px-0 lg:w-11/12 xl:w-10/12 h-auto mx-auto md:mt-20 lg:mt-36 rounded-xl pb-32">
+    <section className="w-full px-2 md:px-0 lg:w-11/12 xl:w-10/12 h-auto mx-auto mt-14 md:mt-20 lg:mt-36 rounded-xl pb-32">
       <div>
         <div className="w-11/12 mx-auto shadow md:mt-0 sm:max-w-md xl:p-0 bg-fuchsia-200 overflow-hidden rounded-2xl">
           <div className="w-full bg-transparent p-5 space-y-4 md:space-y-6 sm:p-8">
@@ -107,7 +107,7 @@ const Login = () => {
                   to="/register"
                   className="font-bold text-blue-600 hover:underline"
                 >
-                  Register
+                  Register here
                 </Link>
               </p>
             </form>

@@ -19,10 +19,10 @@ const FeaturedProduct = () => {
 
   const featuredProducts = products
     .filter((item) => item.featured === "true")
-    .slice(0, 4);
+    .slice(0, 4)
 
   const voteUpHandler = () => {
-    console.log("first");
+    console.log("works");
   };
 
   return (
@@ -40,10 +40,10 @@ const FeaturedProduct = () => {
                 key={item?._id}
                 className="items-center bg-white rounded-3xl shadow-sm sm:flex border overflow-hidden"
               >
-                <div className="overflow-hidden">
-                  <img className="rounded-xl" src={item?.image} alt="image" />
+                <div className="overflow-hidden sm:w-1/2">
+                  <img className="rounded-xl p-3 sm:p-10 md:p-1" src={item?.image} alt="image" />
                 </div>
-                <div className="p-5">
+                <div className="p-5 sm:w-1/2">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 hover:text-blue-400">
                     <Link to={`/products/${item?._id}`}>
                       {item?.productName}
