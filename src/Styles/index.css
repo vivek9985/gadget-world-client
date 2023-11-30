@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: .9rem;
+  width: 0.9rem;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -11,23 +11,37 @@
 ::-webkit-scrollbar-thumb {
   background: rgb(186, 179, 179);
   border-radius: 2rem;
-  border-right: .3rem;
+  border-right: 0.3rem;
   border-style: solid;
   border-color: transparent;
   background-clip: content-box;
 }
 
-
 .lap {
   background-image: url(../assets/laptop.jpeg);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
+.product {
+  color: black;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+.latest {
+  animation: colorChange linear 7s infinite;
+}
+@keyframes colorChange {
+  0% {
+    color: #000000;
+  }
+  100% {
+    color: #06abd4;
+  }
+}
 .spinner {
-  animation: rotate 0.5s infinite linear;
+  animation: rotate 0.6s infinite linear;
 }
 @keyframes rotate {
   from {
@@ -37,13 +51,6 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
-
 
 .thumbnail .keen-slider__slide {
   font-size: 20px;

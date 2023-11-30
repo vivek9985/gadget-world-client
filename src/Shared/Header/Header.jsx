@@ -88,7 +88,6 @@ const Header = () => {
                 ) : (
                   <h2 className="text-blue-500">User Name</h2>
                 )}
-                {/* <br /> */}
                 {user ? (
                   <button
                     onClick={logoutHandler}
@@ -104,6 +103,7 @@ const Header = () => {
                 <button className="bg-red-200 px-4 pb-2 pt-1.5 rounded-xl mt-2">
                   <Link to="/dashboard">Dashboard</Link>
                 </button>
+
                 <div className="absolute w-4 h-4 right-28 lg:right-7 -top-2 bg-gray-300 rotate-45"></div>
               </div>
             </div>

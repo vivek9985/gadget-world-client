@@ -2,6 +2,8 @@ import { TiArrowDownThick } from "react-icons/ti";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../js/animation";
 
 const TendingProducts = () => {
   const axiosPublic = useAxiosPublic();
@@ -16,9 +18,17 @@ const TendingProducts = () => {
 
   return (
     <section>
-      <h2 className="text-center text-xl sm:text-3xl mt-20">
-        TRENDING PRODUCTS
-      </h2>
+      <motion.div
+        variants={fadeIn("down", 0.1)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+      >
+        <h2 className="text-center text-xl sm:text-3xl mt-20">
+          TRENDING PRODUCTS
+        </h2>
+      </motion.div>
+
       <div className="h-px w-[17%] bg-gray-400 mx-auto rounded-full mt-2"></div>
       <div className="h-px w-[14%] bg-gray-400 mx-auto rounded-full mt-1 mb-2"></div>
 
@@ -26,7 +36,14 @@ const TendingProducts = () => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
           <div className="grid gap-8 mb-2 md:grid-cols-2 lg:grid-cols-3 overflow-hidden">
             {trendingProducts.map((item) => (
-              <div key={item._id} className="bg-white rounded-3xl border">
+              <motion.div
+                variants={fadeIn("up", 0.1)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0 }}
+                key={item._id}
+                className="bg-white rounded-3xl border"
+              >
                 <div className="">
                   <div className="flex items-center justify-center">
                     <img
@@ -67,17 +84,23 @@ const TendingProducts = () => {
                     <h3 className="px-5 py-1.5">0</h3>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="text-center mb-32">
-        <button className="bg-white border px-5 py-2 hover:bg-black hover:text-white transition-all duration-500">
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+        className="text-center mb-32"
+      >
+        <button className="bg-white border rounded-md border-gray-800 font-semibold text-xl px-5 py-2 hover:bg-black hover:text-white transition-all duration-500">
           <Link to="/products">Show All Products</Link>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 };

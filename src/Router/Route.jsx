@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             <Details></Details>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+        loader: ({ params }) => fetch(`https://server-side-green.vercel.app/products/${params.id}`),
       },
       {
         path: "login",
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/updateProduct/${params.id}`),
+        loader: ({ params }) => fetch(`https://server-side-green.vercel.app/updateProduct/${params.id}`),
       },
       {
         path: "reviewProducts",

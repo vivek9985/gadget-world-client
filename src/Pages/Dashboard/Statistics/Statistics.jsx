@@ -1,6 +1,8 @@
 import { PieChart, Pie, Cell } from "recharts";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import { FaStar, FaUsers } from "react-icons/fa6";
+import productIcon from "../../../assets/product-5806313-4863042.webp";
 
 const Statistics = () => {
   const axiosSecure = useAxiosSecure();
@@ -26,12 +28,12 @@ const Statistics = () => {
     },
   });
   const datas = [
-    { name: "Total Users", value:users.length },
+    { name: "Total Users", value: users.length },
     { name: "Total Products", value: products.length },
     { name: "Total Reviews", value: reviews.length },
   ];
 
-  const COLORS = ["#546de5", "#c44569", "#3dc1d3"];
+  const COLORS = ["#e4d722c0", "#50ee8ce3", "#dd337a"];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -54,15 +56,15 @@ const Statistics = () => {
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
       >
-        {`${(percent*100).toFixed(2)}%`}
+        {`${(percent * 100).toFixed(2)}%`}
       </text>
     );
   };
-  
 
   return (
-    <div>
-      <div className="flex items-center justify-center mt-40 md:mt-32">
+    <section>
+      <h2 className="text-3xl text-center font-medium my-10">Analytics</h2>
+      <div className="flex items-center justify-center">
         <PieChart width={400} height={400}>
           <Pie
             width={150}
@@ -85,23 +87,30 @@ const Statistics = () => {
           </Pie>
         </PieChart>
       </div>
-      <div className="flex justify-center mt-5 mb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="flex items-center">
-            <p className="text-[#0b0b0b]">Total Products ({products.length})</p>
-            <div className="w-24 h-[9px] bg-[#c44569] rounded-sm ml-4"></div>
-          </div>
-          <div className="flex items-center">
-            <p className="text-[#0b0b0b]">Total Users ({users.length})</p>
-            <div className="w-24 h-[9px] bg-[#546de5] rounded-sm ml-4"></div>
-          </div>
-          <div className="flex items-center">
-            <p className="text-[#0b0b0b]">Total Reviews ({reviews.length})</p>
-            <div className="w-24 h-[9px] bg-[#3dc1d3] rounded-sm ml-4"></div>
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div className="p-6 bg-[#50ee8ce3] rounded-lg">
+          <h2 className="text-xl font-semibold uppercase text-gray-700">Total Products</h2>
+          <h2 className="text-2xl text-blue-500 font-medium flex items-center gap-4 mt-3">
+            <img className="w-8 h-8" src={productIcon} alt="image" />
+            <span className="pb-1">{products.length}</span>
+          </h2>
+        </div>
+        <div className="p-6 bg-[#e4d722c0] rounded-lg">
+          <h2 className="text-xl font-semibold uppercase text-gray-700">Total Users</h2>
+          <h2 className="text-2xl text-blue-500 font-medium flex items-center gap-4 mt-3">
+            <FaUsers></FaUsers>
+            <span className="pb-1">{users.length}</span>
+          </h2>
+        </div>
+        <div className="p-6 bg-[#dd337a] rounded-lg">
+          <h2 className="text-xl font-semibold uppercase text-gray-700">Total Reviews</h2>
+          <h2 className="text-2xl text-blue-500 font-medium flex items-center gap-4 mt-3">
+            <FaStar className="text-orange-300"></FaStar>
+            <span className="pb-1">{reviews.length} </span>
+          </h2>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
