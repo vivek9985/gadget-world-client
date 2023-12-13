@@ -16,6 +16,7 @@ import Details from "../Pages/ProductDetails/Details";
 import UpdateProduct from "../Pages/Dashboard/UpdateProduct/UpdateProduct";
 import Statistics from "../Pages/Dashboard/Statistics/Statistics";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
       },
       {
         path: "products",
